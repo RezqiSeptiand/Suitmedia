@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.suitmediatest.ui.secondpage.SecondScreenActivity
 import com.example.suitmediatest.databinding.ActivityMainBinding
 
@@ -40,9 +41,19 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Fill the data", Toast.LENGTH_SHORT).show()
             } else {
                 if (isPalindrome(palindrome)) {
-                    Toast.makeText(this, "isPalindrome", Toast.LENGTH_SHORT).show()
+                    AlertDialog.Builder(this).apply {
+                        setTitle("isPalindrome")
+                        setMessage("$palindrome isPalindrome")
+                        setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                        create().show()
+                    }
                 } else {
-                    Toast.makeText(this, "not palindrome", Toast.LENGTH_SHORT).show()
+                    AlertDialog.Builder(this).apply {
+                        setTitle("Not Palindrome")
+                        setMessage("$palindrome are not palindrome")
+                        setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                        create().show()
+                    }
                 }
             }
         }
