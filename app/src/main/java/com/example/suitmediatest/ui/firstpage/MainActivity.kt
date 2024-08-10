@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 if (isPalindrome(palindrome)) {
                     AlertDialog.Builder(this).apply {
                         setTitle("isPalindrome")
-                        setMessage("$palindrome are Palindrome")
+                        setMessage("$palindrome are palindrome")
                         setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                         create().show()
                     }
