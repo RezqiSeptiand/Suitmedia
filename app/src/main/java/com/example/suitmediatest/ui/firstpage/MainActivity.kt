@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun isPalindrome(input: String): Boolean {
+    private fun isPalindrome(input: String): Boolean {
         val cleanedInput = input.replace("\\s".toRegex(), "").lowercase()
         return cleanedInput == cleanedInput.reversed()
     }
